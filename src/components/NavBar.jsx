@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 function NavBar() {
@@ -8,9 +9,10 @@ function NavBar() {
     <nav className="navbar">
       <img src={logo} alt="logo" className="navbar-logo" />
 
-      <h1 className="navbar-title">Travel Diary</h1>
+      <span className="login-text">LOG IN</span>
 
       <button
+        type="button"
         className="menu-btn"
         onClick={() => setIsOpen(prev => !prev)}
         aria-expanded={isOpen}
@@ -20,11 +22,17 @@ function NavBar() {
 
       {isOpen && (
         <ul className="menu">
-          <li>Home</li>
-          <li>Login</li>
-          <li>Travels</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li>
+            <Link to="/" onClick={() => setIsOpen(false)}>
+              Home
+            </Link>
+          </li>
+
+          <li>
+             <Link to="/AddTravel" onClick={() => setIsOpen(false)}>
+              Add Trips
+             </Link>
+          </li>
         </ul>
       )}
     </nav>

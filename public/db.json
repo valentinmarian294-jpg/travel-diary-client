@@ -1,0 +1,130 @@
+{
+  "entries": [
+    {
+      "id": 1,
+      "city": "Barcelona",
+      "country": "Spain",
+      "date": "2024-06-15",
+      "notes": "Great food, beach walks, and long evenings. Very lively city.",
+      "rating": 5,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/be/Aerial_view_of_Barceloneta_Beach_and_Port_Vell_in_Barcelona%2C_Spain.jpg"
+    },
+    {
+      "id": 2,
+      "city": "Madrid",
+      "country": "Spain",
+      "date": "2023-10-08",
+      "notes": "Museums were incredible and the city felt very energetic.",
+      "rating": 3,
+      "image": "https://images.unsplash.com/photo-1543783207-ec64e4d95325"
+    },
+    {
+      "id": 3,
+      "city": "Paris",
+      "country": "France",
+      "date": "2023-09-22",
+      "notes": "Beautiful architecture and museums, but extremely crowded.",
+      "rating": 4,
+      "image": "https://t3.ftcdn.net/jpg/04/58/61/36/360_F_458613615_BCC9xQOZwysw1pHf2KzzgstT9xRWfGUZ.jpg"
+    },
+    {
+      "id": 4,
+      "city": "Berlin",
+      "country": "Germany",
+      "date": "2022-11-06",
+      "notes": "Amazing history and nightlife. Cold weather but worth it.",
+      "rating": 4,
+      "image": "https://as2.ftcdn.net/v2/jpg/00/61/81/55/1000_F_61815589_FwyzBJWmiprpLj8gZAwGxhHmHSlrAx4F.jpg"
+    },
+    {
+      "id": 5,
+      "city": "Amsterdam",
+      "country": "Netherlands",
+      "date": "2022-08-14",
+      "notes": "Very bike-friendly and relaxed atmosphere. Loved the canals.",
+      "rating": 5,
+      "image": "https://wallpaperaccess.com/full/1495216.jpg"
+    },
+    {
+      "id": 6,
+      "city": "London",
+      "country": "United Kingdom",
+      "date": "2023-04-19",
+      "notes": "Huge city with endless things to do. Weather was unpredictable.",
+      "rating": 4,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/London_Skyline_%28125508655%29.jpeg/960px-London_Skyline_%28125508655%29.jpeg"
+    },
+    {
+      "id": 7,
+      "city": "Bucharest",
+      "country": "Romania",
+      "date": "2021-07-03",
+      "notes": "Interesting mix of old and new. Very affordable and friendly.",
+      "rating": 4,
+      "image": "https://t4.ftcdn.net/jpg/02/48/03/33/360_F_248033358_kH6YpCoJTVHdnsHvQWjbRMNXa4xmj7qK.jpg"
+    },
+    {
+      "id": 8,
+      "city": "Cluj-Napoca",
+      "country": "Romania",
+      "date": "2021-07-10",
+      "notes": "Young city with great cafes and a strong tech vibe.",
+      "rating": 5,
+      "image": "https://thumbs.dreamstime.com/b/st-michaels-church-clujnapoca-dramatic-silhouette-twilight-romania-experience-timeless-beauty-st-michael-s-church-367658078.jpg"
+    },
+    {
+      "id": 9,
+      "city": "Austin",
+      "country": "United States (Texas)",
+      "date": "2022-03-25",
+      "notes": "Great live music and food. Extremely hot but fun.",
+      "rating": 4,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/06/AustinSkylineLouNeffPoint-2010-03-29-b.JPG"
+    },
+    {
+      "id": 10,
+      "city": "Houston",
+      "country": "United States (Texas)",
+      "date": "2022-03-30",
+      "notes": "Very spread out city. Great food diversity.",
+      "rating": 3,
+      "image": "https://images.unsplash.com/photo-1692154600992-463fa9b27abd?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG91c3RvbiUyMHNreWxpbmV8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+      "id": 11,
+      "city": "Ubud",
+      "country": "Indonesia (Bali)",
+      "date": "2019-09-12",
+      "notes": "Peaceful, green, and spiritual. Amazing nature and food.",
+      "rating": 5,
+       "image": "https://www.destinosasiaticos.com/wp-content/uploads/2025/01/PR-Ubud-Bali-ubud-277349_1920.jpg"
+    },
+    {
+      "id": 12,
+      "city": "Canggu",
+      "country": "Indonesia (Bali)",
+      "date": "2019-09-20",
+      "notes": "Surf, cafes, and relaxed lifestyle. Very social place.",
+      "rating": 2,
+      "image": "https://plus.unsplash.com/premium_photo-1661963067899-cb631fc433a8?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z3Vhbmd6aG91fGVufDB8fDB8fHww"
+    },
+    {
+      "id": 13,
+      "city": "Lisbon",
+      "country": "Portugal",
+      "date": "2024-02-11",
+      "notes": "Hilly city with beautiful views and amazing seafood.",
+      "rating": 5,
+      "image": "https://t3.ftcdn.net/jpg/01/44/22/88/360_F_144228887_XbAeEdZ9vlypAtsVow2tYun4TCYHtrGH.jpg"
+    },
+    {
+      "id": 14,
+      "city": "Rome",
+      "country": "Italy",
+      "date": "2023-05-16",
+      "notes": "History everywhere. Very crowded but unforgettable.",
+      "rating": 4,
+      "image": "https://images.unsplash.com/photo-1525874684015-58379d421a52"
+    }
+  ]
+}
