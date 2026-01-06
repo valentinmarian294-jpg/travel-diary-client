@@ -3,21 +3,29 @@ import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import NavBar from "./components/NavBar";
+import LoginTrips from "./pages/LoginTrips";
 import Footer from "./components/Footer";
 import TravelList from "./components/TravelList";
 import EditTrip from "./pages/EditTrip";
 import AddTravel from "./pages/AddTravel";
+import TravelDetailsPage from "./pages/TravelDetailsPage";
+
 
 
 function App() {
+  const [user, setUser] = useState(null);
   const [travels, setTravels] = useState([]);
 
   const handleAddTravel = (newTravel) => {
-  setTravels((prev) => [newTravel, ...prev]);
+  setTravels((prevTravels) => [...prevTravels, newTravel]);
 };
 
 
   useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if(storedUser){
+      setUser(JSON.parse(storedUser));
+    }
     fetch("/db.json")
       .then((res) => res.json())
       .then((data) => {
@@ -44,25 +52,37 @@ function App() {
 
 return (
   <>
-    <NavBar />
-
+    <NavBar user={user} setUser={setUser} />
+    
     <main>
       <Routes>
         <Route
-          path="/"
-          element={
-            <TravelList
-              travels={travels}
-              deleteTravel={deleteTravel}
-            />
-          }
-        />
-        <Route
-  path="/add"
+  path="/"
   element={
-    <AddTravel handleAddTravel={handleAddTravel} />
+    <TravelList
+      travels={travels}
+      deleteTravel={deleteTravel}
+      user={user}
+    />
   }
 />
+
+        <Route
+          path="/LoginTrips"
+          element={
+          <LoginTrips setUser={setUser}/>
+        }
+        />
+        <Route
+          path="/AddTravel"
+          element={
+          user ? (
+            <AddTravel handleAddTravel={handleAddTravel} />
+          ) : (
+            <LoginTrips setUser={setUser}/>
+          )
+        }
+        />
 
 
         <Route
@@ -75,13 +95,12 @@ return (
           }
         />
 
-        <Route
-          path="/AddTravel"
+        <Route 
+          path="/item/:id"
           element={
-            <AddTravel
+            <TravelDetailsPage 
               travels={travels}
-              addTravel={AddTravel}
-            />
+              user={user}/>
           }
         />
       </Routes>

@@ -4,10 +4,17 @@ import { useState } from "react";
 const EditTrip = ({ travels, updateTravel }) => {
   const { id } = useParams();
 
-  const tripToEdit = travels.find(
-    (trip) => trip.id === Number(id)
-  );
+  if (!travels || travels.length === 0) {
+    return <p>Loading trip...</p>;
+  }
 
+  const tripToEdit = travels.find(
+  (trip) => String(trip.id) === String(id)
+);
+
+if (!tripToEdit) {
+    return <p>Trip not found</p>;
+  }
   const [formData, setFormData] = useState(tripToEdit);
 
   if (!tripToEdit) {

@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer className="site-footer">
-      <p>© 2026 Palinka Incorporated. All rights reserved.</p>
+      <p>© 2026 PalinkaBro's Incorporated. All rights reserved.</p>
     </footer>
   );
 };

@@ -4,8 +4,8 @@ body {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
 
-  background-color: #e2e3f8;
-  color: #1f2933;
+  background-color: #EEF4FB;
+  color: #1E293B;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -16,14 +16,16 @@ a {
   text-decoration: none;
 }
 
-
 /* =========================
    ROOT
    ========================= */
 
 #root {
   min-height: 100vh;
-  background-color: #e2e3f8;
+  background-color: #EEF4FB;
+
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -38,16 +40,18 @@ nav {
   width: 100%;
   height: 100px;
 
-  background-color: #f3ca40;
-  color: #083d77;
+  background-color: #1F3A5F;
+  color: #1F3A5F;
 
   z-index: 1000;
 }
 
 main {
-  padding-top: 120px; /* navbar offset */
+  padding-top: 120px;
   padding-left: 2rem;
   padding-right: 2rem;
+
+  flex: 1;
 }
 
 
@@ -57,6 +61,7 @@ main {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 nav h1 {
@@ -72,8 +77,8 @@ nav h1 {
 
   padding: 12px;
 
-  background-color: #083d77;
-  color: #f3ca40;
+  background-color: #1F3A5F;
+  color: #F4C430;
   border-radius: 8px;
   cursor: pointer;
 }
@@ -87,7 +92,7 @@ nav h1 {
   padding: 12px;
   margin: 0;
 
-  background-color: #d3d6f7;
+  background-color: #EEF4FB;
   border-radius: 8px;
 }
 
@@ -97,7 +102,7 @@ nav h1 {
   top: 50%;
   transform: translateY(-50%);
 
-  color: #083d77;
+  color: #F4C430;
   font-weight: 700;
   font-size: 14px;
   cursor: pointer;
@@ -112,14 +117,14 @@ nav h1 {
   padding-right: 24px;
   max-width: 1440px;
   margin: 0 auto;
-  color: #24427b;
+  color: #1F3A5F;
 }
 
 .travel-page-title {
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 40px;
-  color: #24427b;
+  color: #1F3A5F;
   text-align: center;
 }
 
@@ -132,8 +137,6 @@ nav h1 {
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 60px;
 }
-
-
 
 /* =========================
    CARD
@@ -162,17 +165,16 @@ nav h1 {
    ========================= */
 
 .travel-image {
-  display: block;        
+  display: block;
   width: 100%;
   height: 300px;
 
   object-fit: cover;
   object-position: center center;
 
-  margin: 0;             
-  padding: 0;           
+  margin: 0;
+  padding: 0;
 }
-
 
 .travel-card:hover .travel-image {
   transform: scale(1);
@@ -187,25 +189,24 @@ nav h1 {
   text-align: center;
 }
 
-
 .travel-city {
   font-size: 20px;
   font-weight: 600;
   margin: 0 0 6px;
-  color: #083d77;
+  color: #1F3A5F;
 }
 
 .travel-country {
   font-size: 14px;
   font-weight: 400;
-  color: #666;
+  color: #64748B;
   margin: 0 0 4px;
 }
 
 .travel-date {
   font-size: 13px;
   font-weight: 400;
-  color: #999;
+  color: #64748B;
   margin-bottom: 12px;
 }
 
@@ -217,16 +218,16 @@ nav h1 {
 
 .star {
   font-size: 20px;
-  color: #666;
+  color: #64748B;
   line-height: 1;
 }
 
 .star.filled {
-  color: gold;
+  color: #F4C430;
 }
 
 /* =========================
-   DELETE BUTTON
+   ACTION BUTTONS
    ========================= */
 
 .delete-button-travel {
@@ -234,16 +235,16 @@ nav h1 {
   font-size: 13px;
 
   border-radius: 8px;
-  border: 1px solid #dc2626;
+  border: 1px solid #EF4444;
   background-color: transparent;
-  color: #dc2626;
+  color: #EF4444;
 
   cursor: pointer;
   margin-bottom: 20px;
 }
 
 .delete-button-travel:hover {
-  background-color: #dc2626;
+  background-color: #EF4444;
   color: white;
 }
 
@@ -254,25 +255,27 @@ nav h1 {
   margin-bottom: 24px;
 }
 
-
 .edit-button-travel {
-  padding: 8px 14px;         
+  padding: 8px 14px;
   font-size: 13px;
-  line-height: 1;            
+  line-height: 1;
 
-  border-radius: 8px;         
-  border: 1px solid #24427b;
+  border-radius: 8px;
+  border: 1px solid #1F3A5F;
   background-color: transparent;
-  color: #24427b;
+  color: #1F3A5F;
 
   cursor: pointer;
 }
 
-
 .edit-button-travel:hover {
-  background-color: #24427b;
+  background-color: #1F3A5F;
   color: white;
 }
+
+/* =========================
+   EDIT PAGE
+   ========================= */
 
 .edit-page {
   min-height: calc(100vh - 120px);
@@ -292,34 +295,32 @@ nav h1 {
   border-radius: 18px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
 }
+
 .edit-title {
   font-size: 28px;
   font-weight: 700;
-  color: #24427b;
+  color: #1F3A5F;
   margin-bottom: 6px;
 }
 
 .edit-subtitle {
   font-size: 14px;
-  color: #6b7280;
+  color: #64748B;
   margin-bottom: 28px;
 }
+
 .edit-form {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
 
 .form-group label {
   font-size: 13px;
   font-weight: 600;
-  color: #374151;
+  color: #1E293B;
 }
+
 .form-group input,
 .form-group textarea {
   padding: 10px 12px;
@@ -329,24 +330,14 @@ nav h1 {
   font-family: inherit;
 }
 
-.form-group textarea {
-  resize: vertical;
-  min-height: 90px;
-}
-
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #24427b;
-}
-.edit-actions {
-  margin-top: 24px;
-  display: flex;
-  justify-content: flex-end;
+  border-color: #1F3A5F;
 }
 
 .primary-btn {
-  background-color: #24427b;
+  background-color: #1F3A5F;
   color: white;
   padding: 10px 20px;
   border-radius: 10px;
@@ -357,23 +348,193 @@ nav h1 {
 }
 
 .primary-btn:hover {
-  background-color: #1d3565;
+  background-color: #162C4A;
 }
+
+/* =========================
+   FOOTER
+   ========================= */
 
 .site-footer {
   margin-top: 80px;
   padding: 24px 16px 32px;
-
   text-align: center;
-
   background-color: transparent;
 }
 
 .site-footer p {
   margin: 0;
-
   font-size: 13px;
   font-weight: 500;
+  color: rgba(30, 41, 59, 0.6);
+}
 
-  color: rgba(31, 41, 55, 0.6);
+/* =========================
+   TRAVEL DETAILS
+   ========================= */
+
+.travel-details h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #1F3A5F;
+}
+
+.travel-details p {
+  font-size: 15px;
+  color: #64748B;
+}
+
+.details-card {
+  background-color: #ffffff;
+}
+
+.details-card-title {
+  color: #1F3A5F;
+}
+
+/* =========================
+   LOGIN PAGE
+   ========================= */
+
+.login-page {
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 160px 24px 120px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background-color: #ffffff;
+  padding: 36px 40px 42px;
+  border-radius: 18px;
+
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+
+.Tittle-Log {
+  margin: 0 0 28px;
+  text-align: center;
+
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+
+  color: #1F3A5F;
+}
+
+/* Form */
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+
+/* Inputs */
+
+.email-imput input,
+.password-imput input {
+  width: 100%;
+  padding: 12px 14px;
+
+  font-size: 14px;
+  font-family: inherit;
+
+  border-radius: 10px;
+  border: 1px solid #CBD5E1;
+  background-color: #F8FAFC;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.email-imput input:focus,
+.password-imput input:focus {
+  outline: none;
+  border-color: #1F3A5F;
+  box-shadow: 0 0 0 3px rgba(31, 58, 95, 0.12);
+}
+
+.email-imput,
+.password-imput {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Button */
+
+.Log-Button {
+  margin-top: 12px;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 12px 18px;
+  border-radius: 12px;
+
+  background-color: #1F3A5F;
+  color: #F4C430;
+
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  width: auto;
+  min-width: 140px;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+
+.Log-Button:hover {
+  background-color: #162C4A;
+  transform: translateY(-1px);
+}
+
+
+
+.Log-Out {
+  margin-top: 12px;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 12px 18px;
+  border-radius: 12px;
+
+  background-color: #1F3A5F;
+  color: #F4C430;
+
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  width: auto;
+  min-width: 140px;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+
+.Log-Out:hover {
+  background-color: #162C4A;
+  transform: translateY(-1px);
+}
+
+/* Error */
+
+.login-card p {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 13px;
+
+  color: #EF4444;
 }

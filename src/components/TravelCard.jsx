@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom";
 
-const TravelCard = ({ travel, rating, deleteTravel }) => {
+const TravelCard = ({ travel, deleteTravel, user }) => {
+
   return (
     <div className="travel-card">
+
+      <Link to={`/item/${travel.id}`} className="travel-link">
       <img
-        src={travel.image}
-        alt={travel.city}
-        className="travel-image"
-      />
+  src={travel.images?.[0] || travel.image}
+  alt={travel.city}
+  className="travel-image"
+/>
+
 
       <div className="travel-content">
         <h2 className="travel-city">{travel.city}</h2>
@@ -21,19 +25,23 @@ const TravelCard = ({ travel, rating, deleteTravel }) => {
           ))}
         </div>
       </div>
+      </Link>
 
-      <div className="travel-actions">
-        <Link to={`/edit/${travel.id}`}>
-          <button className="edit-button-travel">Edit</button>
-        </Link>
+      {user && (
+  <div className="travel-actions">
+    <Link to={`/edit/${travel.id}`}>
+      <button className="edit-button-travel">Edit</button>
+    </Link>
 
-        <button
-          onClick={() => deleteTravel(travel.id)}
-          className="delete-button-travel"
-        >
-          Delete
-        </button>
-      </div>
+    <button
+      onClick={() => deleteTravel(travel.id)}
+      className="delete-button-travel"
+    >
+      Delete
+    </button>
+  </div>
+)}
+
     </div>
   );
 };

@@ -2,14 +2,29 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 
-function NavBar() {
+function NavBar({user, setUser}) {
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setUser(null);
+  }
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="navbar">
-      <img src={logo} alt="logo" className="navbar-logo" />
+      <Link to="/">
+        <img src={logo} alt="logo" className="navbar-logo" />
+      </Link>
 
-      <span className="login-text">LOG IN</span>
+      <h1
+  className="login-text"
+  onClick={user ? handleLogout : null}
+>
+  {user ? (
+    "LOG OUT"
+  ) : (
+    <Link to="/LoginTrips">LOG IN</Link>
+  )}
+</h1>
 
       <button
         type="button"
@@ -21,19 +36,21 @@ function NavBar() {
       </button>
 
       {isOpen && (
-        <ul className="menu">
-          <li>
-            <Link to="/" onClick={() => setIsOpen(false)}>
-              Home
-            </Link>
-          </li>
+     <ul className="menu">
+  <li>
+    <Link to="/" onClick={() => setIsOpen(false)}>
+      Home
+    </Link>
+  </li>
 
-          <li>
-             <Link to="/AddTravel" onClick={() => setIsOpen(false)}>
-              Add Trips
-             </Link>
-          </li>
-        </ul>
+  {user && (
+    <li>
+      <Link to="/AddTravel" onClick={() => setIsOpen(false)}>
+        Add Trips
+      </Link>
+    </li>
+  )}
+</ul>
       )}
     </nav>
   );
