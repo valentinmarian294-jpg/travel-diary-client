@@ -1,130 +1,199 @@
 {
   "entries": [
     {
-      "id": 1,
+      "id": "1",
       "city": "Barcelona",
       "country": "Spain",
       "date": "2024-06-15",
       "notes": "Great food, beach walks, and long evenings. Very lively city.",
       "rating": 5,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/be/Aerial_view_of_Barceloneta_Beach_and_Port_Vell_in_Barcelona%2C_Spain.jpg"
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/b/be/Aerial_view_of_Barceloneta_Beach_and_Port_Vell_in_Barcelona%2C_Spain.jpg",
+        "https://www.barcelonacard.org/wp-content/uploads/barcelona-card-homepage-1746806969.jpg",
+        "https://air-production-cms-uploads.storage.googleapis.com/uploads/2024/04/05083419/barcelona-costa.jpg",
+        "https://img2.rtve.es/v/868498/?w=1600"
+      ]
     },
     {
-      "id": 2,
+      "id": "2",
       "city": "Madrid",
       "country": "Spain",
       "date": "2023-10-08",
       "notes": "Museums were incredible and the city felt very energetic.",
       "rating": 3,
-      "image": "https://images.unsplash.com/photo-1543783207-ec64e4d95325"
+      "images": [
+        "https://images.unsplash.com/photo-1543783207-ec64e4d95325",
+        "https://www.spain.info/export/sites/segtur/.content/imagenes/cabeceras-grandes/madrid/calle-gran-via-madrid-s333961043.jpg",
+        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/f7/80/ce/caption.jpg?w=1200&h=-1&s=1&cx=1920&cy=1079&chk=v1_5192524b3b14f2153843",
+        "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/348000/348698-Madrid.jpg"
+      ]
     },
     {
-      "id": 3,
+      "id": "3",
       "city": "Paris",
       "country": "France",
       "date": "2023-09-22",
       "notes": "Beautiful architecture and museums, but extremely crowded.",
       "rating": 4,
-      "image": "https://t3.ftcdn.net/jpg/04/58/61/36/360_F_458613615_BCC9xQOZwysw1pHf2KzzgstT9xRWfGUZ.jpg"
+      "images": [
+        "https://t3.ftcdn.net/jpg/04/58/61/36/360_F_458613615_BCC9xQOZwysw1pHf2KzzgstT9xRWfGUZ.jpg",
+        "https://www.franciaturismo.net/es/wp-content/uploads/sites/17/paris-champs-elysees-arco-triunfal-hd.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/d/d3/H%C3%B4tel_de_ville_de_Paris_%28panoramique%29.jpg",
+        "https://imanesdeviaje.com/wp-content/uploads/2019/08/consejos-para-viajar-a-paris.jpg"
+      ]
     },
     {
-      "id": 4,
+      "id": "4",
       "city": "Berlin",
       "country": "Germany",
       "date": "2022-11-06",
       "notes": "Amazing history and nightlife. Cold weather but worth it.",
       "rating": 4,
-      "image": "https://as2.ftcdn.net/v2/jpg/00/61/81/55/1000_F_61815589_FwyzBJWmiprpLj8gZAwGxhHmHSlrAx4F.jpg"
+      "images": [
+        "https://as2.ftcdn.net/v2/jpg/00/61/81/55/1000_F_61815589_FwyzBJWmiprpLj8gZAwGxhHmHSlrAx4F.jpg",
+        "https://www.civitatis.com/f/alemania/berlin/berlin.jpg",
+        "https://www.edreams.es/blog/wp-content/uploads/sites/5/2024/01/Berli%CC%81n.jpg.webp",
+        "https://guias-viajar.com/wp-content/uploads/2022/03/berlin-puerta-brandenburgo-3.jpg"
+      ]
     },
     {
-      "id": 5,
+      "id": "5",
       "city": "Amsterdam",
       "country": "Netherlands",
       "date": "2022-08-14",
       "notes": "Very bike-friendly and relaxed atmosphere. Loved the canals.",
       "rating": 5,
-      "image": "https://wallpaperaccess.com/full/1495216.jpg"
+      "images": [
+        "https://wallpaperaccess.com/full/1495216.jpg",
+        "https://img.nh-hotels.net/a9lpo/8MXbDD/original/Travel+Guides+%E2%80%93+City+Guide+%E2%80%93+Amsterdam+-+bicis+en+canal.jpg",
+        "https://cdn.guialowcost.es/wp-content/uploads/recorrido-por-lo-mejor-de-amsterdam.jpg",
+        "https://media.viviendodeviaje.com/tips-viajeros/rijksmuseum-amsterdam-1540x1155.jpg"
+      ]
     },
     {
-      "id": 6,
+      "id": "6",
       "city": "London",
       "country": "United Kingdom",
       "date": "2023-04-19",
       "notes": "Huge city with endless things to do. Weather was unpredictable.",
       "rating": 4,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/London_Skyline_%28125508655%29.jpeg/960px-London_Skyline_%28125508655%29.jpeg"
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/London_Skyline_%28125508655%29.jpeg/960px-London_Skyline_%28125508655%29.jpeg",
+        "https://www.flightgift.com/media/wp/FG/2023/12/BIG-BEN.webp",
+        "https://cdn-imgix.headout.com/media/images/87d5b89fec1d971f533de6f4d30a609f-11124-london-christmas-at-the-london-eye-01.jpg",
+        "https://images.ctfassets.net/x5n15ofh32yq/357qtM67F4OJ0emtAOT0Tf/c82e466452d80ad9d0838c8561c19e13/London_01_AdobeStock_135613354.jpeg?fm=webp&q=75&w=3840"
+      ]
     },
     {
-      "id": 7,
+      "id": "7",
       "city": "Bucharest",
       "country": "Romania",
       "date": "2021-07-03",
       "notes": "Interesting mix of old and new. Very affordable and friendly.",
       "rating": 4,
-      "image": "https://t4.ftcdn.net/jpg/02/48/03/33/360_F_248033358_kH6YpCoJTVHdnsHvQWjbRMNXa4xmj7qK.jpg"
+      "images": [
+        "https://t4.ftcdn.net/jpg/02/48/03/33/360_F_248033358_kH6YpCoJTVHdnsHvQWjbRMNXa4xmj7qK.jpg",
+        "https://cdn.pixabay.com/photo/2019/08/13/08/48/bucuresti-4402855_1280.jpg",
+        "https://urlaub-in-rumänien.de/wp-content/uploads/2017/02/Arcul_de_Triumf_Noaptea-3.jpg",
+        "https://cdn-imgix.headout.com/media/images/0be8474e3dc416d92e03147fc8c91ec1-Therme%20Bucuresti.jpg"
+      ]
     },
     {
-      "id": 8,
+      "id": "8",
       "city": "Cluj-Napoca",
       "country": "Romania",
       "date": "2021-07-10",
       "notes": "Young city with great cafes and a strong tech vibe.",
       "rating": 5,
-      "image": "https://thumbs.dreamstime.com/b/st-michaels-church-clujnapoca-dramatic-silhouette-twilight-romania-experience-timeless-beauty-st-michael-s-church-367658078.jpg"
+      "images": [
+        "https://thumbs.dreamstime.com/b/st-michaels-church-clujnapoca-dramatic-silhouette-twilight-romania-experience-timeless-beauty-st-michael-s-church-367658078.jpg",
+        "https://static.vueling.com/cms/media/1285831/cluj-napoca.jpg",
+        "https://www.romaniaturismo.it/wp-content/uploads/sites/74/cluj-napoca.jpg",
+        "https://scratchyourmapa.com/wp-content/uploads/2022/10/Salina-Turda-2.jpg"
+      ]
     },
     {
-      "id": 9,
+      "id": "9",
       "city": "Austin",
       "country": "United States (Texas)",
       "date": "2022-03-25",
       "notes": "Great live music and food. Extremely hot but fun.",
       "rating": 4,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/06/AustinSkylineLouNeffPoint-2010-03-29-b.JPG"
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/0/06/AustinSkylineLouNeffPoint-2010-03-29-b.JPG",
+        "https://www.rentown.net/blog/wp-content/uploads/2018/08/Austin-Texas-1.jpeg",
+        "https://www.lincolngoldfinch.com/wp-content/uploads/2023/03/learn-interesting-and-immersive-facts-about-the-hottest-city-austin-texas-1000x666.jpg"
+      ]
     },
     {
-      "id": 10,
+      "id": "10",
       "city": "Houston",
       "country": "United States (Texas)",
       "date": "2022-03-30",
       "notes": "Very spread out city. Great food diversity.",
       "rating": 3,
-      "image": "https://images.unsplash.com/photo-1692154600992-463fa9b27abd?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG91c3RvbiUyMHNreWxpbmV8ZW58MHx8MHx8fDA%3D"
+      "images": [
+        "https://images.unsplash.com/photo-1692154600992-463fa9b27abd?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG91c3RvbiUyMHNreWxpbmV8ZW58MHx8MHx8fDA%3D",
+        "https://www.papercitymag.com/wp-content/uploads/2022/12/Winter-Wanderland-3@Central-Houston--2048x1365.jpeg",
+        "https://s.hdnux.com/photos/01/30/75/47/23321078/3/ratio3x2_1920.jpg",
+        "https://res.cloudinary.com/hello-tickets/image/upload/c_limit,f_auto,q_auto,w_1300/v1678053965/cu8ghaigl1mtk0ejrk4x.jpg"
+      ]
     },
     {
-      "id": 11,
+      "id": "11",
       "city": "Ubud",
       "country": "Indonesia (Bali)",
       "date": "2019-09-12",
       "notes": "Peaceful, green, and spiritual. Amazing nature and food.",
       "rating": 5,
-       "image": "https://www.destinosasiaticos.com/wp-content/uploads/2025/01/PR-Ubud-Bali-ubud-277349_1920.jpg"
+      "images": [
+        "https://www.destinosasiaticos.com/wp-content/uploads/2025/01/PR-Ubud-Bali-ubud-277349_1920.jpg",
+        "https://wanderingwheatleys.com/wp-content/uploads/2022/07/top-highlights-of-ubud-bali-header.jpg",
+        "https://les-10-incontournables.com/wp-content/uploads/2023/08/riziere-a-voir-sejour-ubud-scaled.jpg",
+        "https://a.cdn-hotels.com/gdcs/production48/d1682/e9836f9d-a49f-4093-b8ae-0dbd475086cd.jpg"
+      ]
     },
     {
-      "id": 12,
+      "id": "12",
       "city": "Canggu",
       "country": "Indonesia (Bali)",
       "date": "2019-09-20",
       "notes": "Surf, cafes, and relaxed lifestyle. Very social place.",
       "rating": 2,
-      "image": "https://plus.unsplash.com/premium_photo-1661963067899-cb631fc433a8?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z3Vhbmd6aG91fGVufDB8fDB8fHww"
+      "images": [
+        "https://plus.unsplash.com/premium_photo-1661963067899-cb631fc433a8?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z3Vhbmd6aG91fGVufDB8fDB8fHww",
+        "https://www.polardesglaces.com/wp-content/uploads/2024/03/Canggu-Bali-1024x574.png",
+        "https://finnsbeachclub.com/wp-content/uploads/2022/11/finns-beach-club-in-bali.jpg",
+        "https://mediaim.expedia.com/destination/1/90262adfc48460ed2bbce600f74f44e8.jpg"
+      ]
     },
     {
-      "id": 13,
+      "id": "13",
       "city": "Lisbon",
       "country": "Portugal",
       "date": "2024-02-11",
       "notes": "Hilly city with beautiful views and amazing seafood.",
       "rating": 5,
-      "image": "https://t3.ftcdn.net/jpg/01/44/22/88/360_F_144228887_XbAeEdZ9vlypAtsVow2tYun4TCYHtrGH.jpg"
+      "images": [
+        "https://t3.ftcdn.net/jpg/01/44/22/88/360_F_144228887_XbAeEdZ9vlypAtsVow2tYun4TCYHtrGH.jpg",
+        "https://www.portugal.com/wp-content/uploads/2022/01/Lisbon-Skyline-small.jpg",
+        "https://www.portugaldenorteasul.pt/uploads/20180529125202_Parque-Eduardo-VII_lisboa.jpg",
+        "https://www.migratingmiss.com/wp-content/uploads/2017/01/Lisbon-Portugal-21-2-1-1024x734.jpg"
+      ]
     },
     {
-      "id": 14,
+      "id": "14",
       "city": "Rome",
       "country": "Italy",
       "date": "2023-05-16",
       "notes": "History everywhere. Very crowded but unforgettable.",
       "rating": 4,
-      "image": "https://images.unsplash.com/photo-1525874684015-58379d421a52"
+      "images": [
+        "https://images.unsplash.com/photo-1525874684015-58379d421a52",
+        "https://media.architecturaldigest.com/photos/64526b147ae2e42df7436f42/16:9/w_2560%2Cc_limit/GettyImages-1442286876.jpg",
+        "https://static1.thetravelimages.com/wordpress/wp-content/uploads/2023/05/rome-italy-at-the-pantheon.jpg",
+        "https://www.leisure-italy.com/wp-content/uploads/2019/07/Rome-by-night-1.jpg"
+      ]
     }
   ]
 }

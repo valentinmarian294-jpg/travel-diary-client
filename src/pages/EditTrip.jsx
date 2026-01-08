@@ -1,32 +1,33 @@
-import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const EditTrip = ({ travels, updateTravel }) => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
-  if (!travels || travels.length === 0) {
+  const [formData, setFormData] = useState(null);
+
+  useEffect(() => {
+    if (!Array.isArray(travels)) return;
+
+    const tripToEdit = travels.find(
+      (trip) => String(trip.id) === String(id)
+    );
+
+    if (!tripToEdit) return;
+
+    setFormData({
+      ...tripToEdit,
+      images: Array.isArray(tripToEdit.images)
+        ? tripToEdit.images
+        : typeof tripToEdit.images === "string"
+        ? [tripToEdit.images]
+        : [""],
+    });
+  }, [travels, id]);
+
+  if (!Array.isArray(travels) || !formData) {
     return <p>Loading trip...</p>;
-  }
-
-  const tripToEdit = travels.find(
-  (trip) => String(trip.id) === String(id)
-);
-
-if (!tripToEdit) {
-    return <p>Trip not found</p>;
-  }
-  const [formData, setFormData] = useState({
-  ...tripToEdit,
-  images: tripToEdit.images
-    ? tripToEdit.images
-    : tripToEdit.image
-    ? [tripToEdit.image]
-    : [""]
-});
-
-
-  if (!tripToEdit) {
-    return <p>Trip not found</p>;
   }
 
   const handleChange = (e) => {
@@ -36,17 +37,40 @@ if (!tripToEdit) {
     });
   };
 
-  const handleSubmit = (e) => {
-  e.preventDefault();
-
-  const cleanedTrip = {
-    ...formData,
-    images: formData.images.filter((url) => url.trim() !== ""),
+  // ✅ NEW: delete a single image by index
+  const handleDeleteImage = (indexToDelete) => {
+    setFormData({
+      ...formData,
+      images: formData.images.filter(
+        (_, index) => index !== indexToDelete
+      ),
+    });
   };
 
-  updateTravel(cleanedTrip);
-};
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
+    const cleanedTrip = {
+      ...formData,
+      images: formData.images.filter((url) => url.trim() !== ""),
+    };
+
+    fetch(`http://localhost:3001/entries/${cleanedTrip.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(cleanedTrip),
+    })
+      .then((res) => res.json())
+      .then((updatedFromServer) => {
+        updateTravel(updatedFromServer);
+        navigate("/");
+      })
+      .catch((err) => {
+        console.error("Error updating trip", err);
+      });
+  };
 
   return (
     <section className="edit-page">
@@ -79,51 +103,58 @@ if (!tripToEdit) {
           </div>
 
           <div className="form-group">
-  <label>Trip Images</label>
+            <label>Trip Images</label>
 
-  {formData.images.map((img, index) => (
-  <div key={index} style={{ width: "100%" }}>
-    <input
-      type="url"
-      placeholder={`Image URL ${index + 1}`}
-      value={img}
-      onChange={(e) => {
-        const updatedImages = [...formData.images];
-        updatedImages[index] = e.target.value;
+            {formData.images.map((img, index) => (
+              <div key={index} className="edit-image-block">
 
-        setFormData({
-          ...formData,
-          images: updatedImages,
-        });
-      }}
-    />
+                <input
+                  type="url"
+                  placeholder={`Image URL ${index + 1}`}
+                  value={img}
+                  onChange={(e) => {
+                    const updatedImages = [...formData.images];
+                    updatedImages[index] = e.target.value;
 
-    {img && (
-      <img
-  src={img}
-  alt={`Preview ${index + 1}`}
-  className="edit-image-preview"
-/>
+                    setFormData({
+                      ...formData,
+                      images: updatedImages,
+                    });
+                  }}
+                />
 
-    )}
-  </div>
-))}
+                {img && (
+                  <img
+                    src={img}
+                    alt={`Preview ${index + 1}`}
+                    className="edit-image-preview"
+                  />
+                )}
 
+                {/* ✅ NEW: delete button for this image */}
+                <button
+                  type="button"
+                  onClick={() => handleDeleteImage(index)}
+                  className="delete-image-btn"
+                >
+                  Delete image
+                </button>
+              </div>
+            ))}
 
-  <button
-    type="button"
-    className="secondary-btn"
-    onClick={() =>
-      setFormData({
-        ...formData,
-        images: [...formData.images, ""],
-      })
-    }
-  >
-    + Add another image
-  </button>
-</div>
-
+            <button
+              type="button"
+              className="secondary-btn"
+              onClick={() =>
+                setFormData({
+                  ...formData,
+                  images: [...formData.images, ""],
+                })
+              }
+            >
+              + Add another image
+            </button>
+          </div>
 
           <div className="form-group">
             <label>Rating</label>

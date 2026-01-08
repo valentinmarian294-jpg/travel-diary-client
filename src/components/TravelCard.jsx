@@ -2,15 +2,26 @@ import { Link } from "react-router-dom";
 
 const TravelCard = ({ travel, deleteTravel, user }) => {
 
+console.log("TRAVEL CARD DATA:", travel);
+
+
   return (
     <div className="travel-card">
 
       <Link to={`/item/${travel.id}`} className="travel-link">
-      <img
-  src={travel.images?.[0] || travel.image}
+<img
+  src={
+    Array.isArray(travel.images)
+      ? travel.images.find((url) => url && url.trim() !== "")
+      : typeof travel.images === "string"
+      ? travel.images
+      : ""
+  }
   alt={travel.city}
   className="travel-image"
 />
+
+
 
 
       <div className="travel-content">
