@@ -1,4 +1,5 @@
 import {useParams} from "react-router-dom";
+import { useState } from "react";
 
 
 const TravelDetailsPage = ({ travels, user }) => {
@@ -8,6 +9,11 @@ const TravelDetailsPage = ({ travels, user }) => {
 
 
     const { id } = useParams();
+    
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isImageOpen, setIsImageOpen] = useState(false);
+    
+
 
     if (!travels || travels.length === 0) {
         return <p>Loading trip...</p>;
@@ -17,7 +23,16 @@ const TravelDetailsPage = ({ travels, user }) => {
         (t) => String(t.id) === String(id)
     );
 
-    
+
+  const images =
+  Array.isArray(trip.images) && trip.images.length > 0
+    ? trip.images
+    : trip.image
+    ? [trip.image]
+    : [];
+
+
+
 
     if (!trip) {
         return <p>Trip not found</p>
@@ -27,12 +42,62 @@ const TravelDetailsPage = ({ travels, user }) => {
     <section className="travel-details">
 
         <div className="details-image-wrapper">
-            <img
-                src={trip.image}
-                alt={trip.city}
-                className="details-image"
-            />
-        </div>
+  <img
+    src={images[currentIndex]}
+    alt={`${trip.city} image ${currentIndex + 1}`}
+    className="details-image"
+    onClick={() => setIsImageOpen(true)}
+  />
+
+  {images.length > 1 && (
+    <>
+      <button
+        className="carousel-btn prev"
+        onClick={() =>
+          setCurrentIndex(
+            currentIndex === 0
+              ? images.length - 1
+              : currentIndex - 1
+          )
+        }
+      >
+        ‹
+      </button>
+
+      <button
+        className="carousel-btn next"
+        onClick={() =>
+          setCurrentIndex(
+            currentIndex === images.length - 1
+              ? 0
+              : currentIndex + 1
+          )
+        }
+      >
+        ›
+      </button>
+
+
+      {images.length > 1 && (
+  <div className="carousel-dots">
+    {images.map((_, index) => (
+      <span
+        key={index}
+        className={
+          index === currentIndex
+            ? "carousel-dot active"
+            : "carousel-dot"
+        }
+        onClick={() => setCurrentIndex(index)}
+      />
+    ))}
+  </div>
+)}
+
+    </>
+  )}
+</div>
+
 
         <div className="details-cards">
 
@@ -66,6 +131,20 @@ const TravelDetailsPage = ({ travels, user }) => {
     >
       Delete
     </button>
+  </div>
+)}
+
+
+{isImageOpen && (
+  <div
+    className="image-modal"
+    onClick={() => setIsImageOpen(false)}
+  >
+    <img
+      src={images[currentIndex]}
+      alt="Full size"
+      className="image-modal-content"
+    />
   </div>
 )}
 

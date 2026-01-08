@@ -15,7 +15,15 @@ const EditTrip = ({ travels, updateTravel }) => {
 if (!tripToEdit) {
     return <p>Trip not found</p>;
   }
-  const [formData, setFormData] = useState(tripToEdit);
+  const [formData, setFormData] = useState({
+  ...tripToEdit,
+  images: tripToEdit.images
+    ? tripToEdit.images
+    : tripToEdit.image
+    ? [tripToEdit.image]
+    : [""]
+});
+
 
   if (!tripToEdit) {
     return <p>Trip not found</p>;
@@ -29,9 +37,16 @@ if (!tripToEdit) {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    updateTravel(formData);
+  e.preventDefault();
+
+  const cleanedTrip = {
+    ...formData,
+    images: formData.images.filter((url) => url.trim() !== ""),
   };
+
+  updateTravel(cleanedTrip);
+};
+
 
   return (
     <section className="edit-page">
@@ -41,7 +56,7 @@ if (!tripToEdit) {
         </h1>
 
         <p className="edit-subtitle">
-          Update the details of your trip below.
+          Update the details of your adventure
         </p>
 
         <form onSubmit={handleSubmit} className="edit-form">
@@ -64,13 +79,51 @@ if (!tripToEdit) {
           </div>
 
           <div className="form-group">
-            <label>Image URL</label>
-            <input
-              name="image"
-              value={formData.image}
-              onChange={handleChange}
-            />
-          </div>
+  <label>Trip Images</label>
+
+  {formData.images.map((img, index) => (
+  <div key={index} style={{ width: "100%" }}>
+    <input
+      type="url"
+      placeholder={`Image URL ${index + 1}`}
+      value={img}
+      onChange={(e) => {
+        const updatedImages = [...formData.images];
+        updatedImages[index] = e.target.value;
+
+        setFormData({
+          ...formData,
+          images: updatedImages,
+        });
+      }}
+    />
+
+    {img && (
+      <img
+  src={img}
+  alt={`Preview ${index + 1}`}
+  className="edit-image-preview"
+/>
+
+    )}
+  </div>
+))}
+
+
+  <button
+    type="button"
+    className="secondary-btn"
+    onClick={() =>
+      setFormData({
+        ...formData,
+        images: [...formData.images, ""],
+      })
+    }
+  >
+    + Add another image
+  </button>
+</div>
+
 
           <div className="form-group">
             <label>Rating</label>

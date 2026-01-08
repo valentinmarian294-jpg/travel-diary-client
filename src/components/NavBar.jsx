@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+import DarkMode from "./DarkMode";
 
 function NavBar({user, setUser}) {
   const handleLogout = () => {
@@ -14,18 +15,17 @@ function NavBar({user, setUser}) {
       <Link to="/">
         <img src={logo} alt="logo" className="navbar-logo" />
       </Link>
-
       <h1
-  className="login-text"
-  onClick={user ? handleLogout : null}
->
-  {user ? (
-    "LOG OUT"
-  ) : (
-    <Link to="/LoginTrips">LOG IN</Link>
-  )}
-</h1>
-
+        className="login-text"
+        onClick={user ? handleLogout : null}
+      >
+      {user ? (
+        "LOG OUT"
+        ) : (
+      <Link to="/LoginTrips">LOG IN</Link>
+        )}
+      </h1>
+        
       <button
         type="button"
         className="menu-btn"
@@ -34,7 +34,7 @@ function NavBar({user, setUser}) {
       >
         ☰
       </button>
-
+         <DarkMode />
       {isOpen && (
      <ul className="menu">
   <li>

@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import NavBar from "./components/NavBar";
+import DarkMode from "./components/DarkMode";
 import LoginTrips from "./pages/LoginTrips";
 import Footer from "./components/Footer";
 import TravelList from "./components/TravelList";
@@ -57,20 +58,20 @@ return (
     <main>
       <Routes>
         <Route
-  path="/"
-  element={
-    <TravelList
-      travels={travels}
-      deleteTravel={deleteTravel}
-      user={user}
-    />
-  }
-/>
+          path="/"
+          element={
+            <TravelList
+              travels={travels}
+              deleteTravel={deleteTravel}
+              user={user}
+          />
+        }
+        />
 
         <Route
           path="/LoginTrips"
           element={
-          <LoginTrips setUser={setUser}/>
+            <LoginTrips setUser={setUser}/>
         }
         />
         <Route
