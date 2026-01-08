@@ -37,7 +37,6 @@ const EditTrip = ({ travels, updateTravel }) => {
     });
   };
 
-  // ✅ NEW: delete a single image by index
   const handleDeleteImage = (indexToDelete) => {
     setFormData({
       ...formData,
@@ -131,7 +130,6 @@ const EditTrip = ({ travels, updateTravel }) => {
                   />
                 )}
 
-                {/* ✅ NEW: delete button for this image */}
                 <button
                   type="button"
                   onClick={() => handleDeleteImage(index)}
