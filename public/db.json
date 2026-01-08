@@ -194,6 +194,16 @@
         "https://static1.thetravelimages.com/wordpress/wp-content/uploads/2023/05/rome-italy-at-the-pantheon.jpg",
         "https://www.leisure-italy.com/wp-content/uploads/2019/07/Rome-by-night-1.jpg"
       ]
+    },
+    {
+      "id": "61611a5e-0f2b-4bf9-a7f8-9ba25a7e6abe",
+      "city": "Lyon",
+      "country": "France",
+      "images": [
+        "https://wanderingwheatleys.com/wp-content/uploads/2022/03/best-things-to-do-in-lyon-france-header-1800x1080.jpg"
+      ],
+      "rating": 4,
+      "notes": ""
     }
   ]
 }

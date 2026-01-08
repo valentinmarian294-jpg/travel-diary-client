@@ -15,7 +15,7 @@ function App() {
   const [travels, setTravels] = useState([]);
 
   const handleAddTravel = (newTravel) => {
-  fetch("http://localhost:3001/entries", {
+  fetch("http://https://travel-diary-api-4bc5.onrender.com/entries", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -36,7 +36,7 @@ function App() {
     setUser(JSON.parse(storedUser));
   }
 
-  fetch("http://localhost:3001/entries")
+  fetch("http://https://travel-diary-api-4bc5.onrender.com/entries")
     .then((res) => res.json())
     .then((data) => {
       setTravels(data);
@@ -49,7 +49,7 @@ function App() {
 
 
   const deleteTravel = (id) => {
-  fetch(`http://localhost:3001/entries/${id}`, {
+  fetch(`http://https://travel-diary-api-4bc5.onrender.com/entries/${id}`, {
     method: "DELETE",
   })
     .then(() => {
@@ -69,7 +69,7 @@ function App() {
       : [],
   };
 
-  fetch(`http://localhost:3001/entries/${cleanedTrip.id}`, {
+  fetch(`http://https://travel-diary-api-4bc5.onrender.com/entries/${cleanedTrip.id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(cleanedTrip),

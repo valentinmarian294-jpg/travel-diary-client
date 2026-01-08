@@ -55,7 +55,7 @@ const EditTrip = ({ travels, updateTravel }) => {
       images: formData.images.filter((url) => url.trim() !== ""),
     };
 
-    fetch(`http://localhost:3001/entries/${cleanedTrip.id}`, {
+    fetch(`http://https://travel-diary-api-4bc5.onrender.com/entries/${cleanedTrip.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
