@@ -15,14 +15,13 @@ console.log("TRAVEL CARD DATA:", travel);
       ? travel.images.find((url) => url && url.trim() !== "")
       : typeof travel.images === "string"
       ? travel.images
+      : typeof travel.image === "string"
+      ? travel.image
       : ""
   }
   alt={travel.city}
   className="travel-image"
 />
-
-
-
 
       <div className="travel-content">
         <h2 className="travel-city">{travel.city}</h2>

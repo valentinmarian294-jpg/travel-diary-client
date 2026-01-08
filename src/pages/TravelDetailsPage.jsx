@@ -24,12 +24,14 @@ const TravelDetailsPage = ({ travels, user }) => {
         return <p>Trip not found</p>
     }
 
-   const images =
-  Array.isArray(trip.images)
-    ? trip.images
-    : typeof trip.images === "string"
-    ? [trip.images]
-    : [];
+  const images = Array.isArray(trip.images)
+  ? trip.images.filter((url) => url && url.trim() !== "")
+  : typeof trip.images === "string"
+  ? [trip.images]
+  : typeof trip.image === "string"
+  ? [trip.image]
+  : [];
+
 
 
     return (
